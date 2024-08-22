@@ -3,6 +3,7 @@ import Loadable from 'app/components/Loadable';
 
 const SearchClientPage = Loadable(lazy(() => import('./client/SearchClientPage')));
 const AddClientPage = Loadable(lazy(() => import('./client/AddClientPage')));
+const MemberSetupPage = Loadable(lazy(() => import('./client/AddClientPage')));
 const UpdateClientInfoTemplate = Loadable(lazy(() => import('./settings/UpdateClientInfoTemplate')));
 const AppForm = Loadable(lazy(() => import('./forms/AppForm')));
 const AppButton = Loadable(lazy(() => import('./buttons/AppButton')));

@@ -5,6 +5,7 @@ import { authRoles } from './auth/authRoles';
 import Loadable from './components/Loadable';
 import MatxLayout from './components/MatxLayout/MatxLayout';
 import materialRoutes from 'app/views/material-kit/MaterialRoutes';
+import groupManagementRoutes from 'app/views/my-group/Routes';
 
 // session pages
 const NotFound = Loadable(lazy(() => import('app/views/sessions/NotFound')));
@@ -16,7 +17,7 @@ const ForgotPassword = Loadable(lazy(() => import('app/views/sessions/ForgotPass
 const AppEchart = Loadable(lazy(() => import('app/views/charts/echarts/AppEchart')));
 
 // dashboard page
-const Analytics = Loadable(lazy(() => import('app/views/dashboard/Analytics')));
+const Analytics = Loadable(lazy(() => import('app/views/trading-panel/Analytics')));
 
 const routes = [
   {
@@ -27,9 +28,10 @@ const routes = [
     ),
     children: [
       ...materialRoutes,
+      ...groupManagementRoutes,
       // dashboard route
       {
-        path: '/dashboard/default',
+        path: '/trading-panel/default',
         element: <Analytics />,
         auth: authRoles.admin
       },
@@ -49,7 +51,7 @@ const routes = [
   { path: '/session/signup', element: <JwtRegister /> },
   { path: '/session/forgot-password', element: <ForgotPassword /> },
 
-  { path: '/', element: <Navigate to="dashboard/default" /> },
+  { path: '/', element: <Navigate to="trading-panel/default" /> },
   { path: '*', element: <NotFound /> }
 ];
 

@@ -40,12 +40,6 @@ const Breadcrumb = ({ routeSegments }) => {
 
   return (
     <BreadcrumbRoot>
-      {routeSegments ? (
-        <Hidden xsDown>
-          <BreadcrumbName>{routeSegments[routeSegments.length - 1]['name']}</BreadcrumbName>
-          <Separator>|</Separator>
-        </Hidden>
-      ) : null}
 
       <Breadcrumbs
         separator={<Icon sx={{ color: hint }}>navigate_next</Icon>}
